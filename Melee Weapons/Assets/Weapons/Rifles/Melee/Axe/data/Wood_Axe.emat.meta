@@ -1,0 +1,15 @@
+MetaFileClass {
+ Name "{D6FF3D04E364084E}Assets/Weapons/Rifles/Melee/Axe/data/Wood_Axe.emat"
+ Configurations {
+  EMATResourceClass PC {
+  }
+  EMATResourceClass XBOX_ONE : PC {
+  }
+  EMATResourceClass XBOX_SERIES : PC {
+  }
+  EMATResourceClass PS4 : PC {
+  }
+  EMATResourceClass HEADLESS : PC {
+  }
+ }
+}

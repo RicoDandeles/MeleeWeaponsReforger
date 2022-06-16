@@ -1,0 +1,5 @@
+MatPBRBasic {
+ BCRMap "{7D2C1EE9D3295274}Assets/Weapons/Rifles/Melee/Machete/ShoelacelessMachete_BCR.edds"
+ OpacityMap "{38019AC588B427C1}Assets/Weapons/Rifles/Melee/Machete/ShoelacelessMachete_Opacity.edds"
+ NMOMap "{45F4A57B0A5E00EA}Assets/Weapons/Rifles/Melee/Machete/ShoelacelessMachete_NMO.edds"
+}

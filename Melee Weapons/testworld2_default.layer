@@ -1,0 +1,39 @@
+GenericEntity : "{1A3C973B1C114E6A}Prefabs/Weapons/Melee Weapons/shovel.et" {
+ coords 132.027 1.448 103.992
+ angleX 0
+}
+$grp SCR_ChimeraCharacter : "{26A9756790131354}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_Rifleman.et" {
+ {
+  coords 138.586 1.001 104.988
+ }
+ {
+  coords 138.099 1.001 103.547
+ }
+ {
+  coords 134.965 1.001 104.132
+ }
+ {
+  coords 136.08 1.001 103.157
+ }
+}
+GenericEntity : "{2B78ED88DE5D5F65}PrefabsEditable/Auto/Props/Military/Training/Obstacles/E_ObstacleRamp_01_platform.et" {
+ coords 131.411 1.001 101.398
+}
+GenericEntity : "{59C7768E9BAB265D}Prefabs/Weapons/Melee Weapons/6kh4_knife.et" {
+ coords 130.39 1.001 104.404
+}
+GenericEntity : "{5EFE992D9A2F2236}Prefabs/Weapons/Melee Weapons/axe.et" {
+ coords 130.916 1.001 105.213
+}
+GenericEntity : "{75FE1BCBBF2A71A5}Prefabs/Weapons/Melee Weapons/machete.et" {
+ coords 131.677 1.001 105.731
+}
+GenericEntity : "{858503D4394F6CDC}Prefabs/Weapons/Melee Weapons/m9_knife.et" {
+ coords 129.841 1.001 104.325
+}
+GenericEntity : "{8BD55E829F223B7D}Prefabs/Weapons/Melee Weapons/hatchet.et" {
+ coords 132.528 1.001 102.876
+}
+GenericEntity : "{EF4F5767AF262757}Prefabs/Weapons/Melee Weapons/sledge_hammer.et" {
+ coords 130.297 1.001 106.406
+}
