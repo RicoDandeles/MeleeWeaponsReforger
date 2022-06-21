@@ -1,0 +1,45 @@
+GenericEntity {
+ ID "59A8825364251F65"
+ components {
+  SignalsManagerComponent "{59A882536963985B}" {
+  }
+  MuzzleInMagComponent "{59A8825369639BCB}" {
+   Enabled 1
+   MuzzleType UGLMuzzle
+   ProjectileSpawnPositions {
+    PointInfo "{59A882536963981C}" {
+    }
+   }
+   ChamberedAmmo 1
+   FireModes {
+    BaseFireMode "{59A8825369639BEE}" {
+     UIName "Throwing"
+    }
+   }
+   MissileWeaponLink BaseMissileWeaponLinkClass "{59A8825369639BF3}" {
+   }
+   MagazineWell BaseMagazineWell "{59A8825369639BFD}" {
+   }
+   BulletInitSpeedCoef 1
+   UIInfo GrenadeUIInfo "{59A8825369639BCE}" {
+    Icon "{793CF85523BFB09F}UI/Textures/WeaponInfo/icons_weaponInfo-050.imageset"
+    m_sAmmoType "TEST"
+   }
+   ReloadDuration 2
+   AmmoTemplate "{1663496AE5B9F10B}Prefabs/Weapons/Ammo/Ammo_Grenade_HEDP_M433.et"
+   MaxAmmo 1
+   InitialAmmo 1
+   ProjectileVisible 1
+   IsAttachment 1
+   ReloadUGL 1
+  }
+  RplComponent "{59A8825369639BD7}" {
+  }
+  MeshObject "{59A8825369639BA5}" {
+   Object "{CB4B410E5D99D4CF}Assets/Weapons/Attachments/Bayonets/Bayonet_M9/Bayonet_M9.xob"
+  }
+ }
+ coords 95.198 1.98 85.89
+ scale 9.7
+ Flags 4194307
+}

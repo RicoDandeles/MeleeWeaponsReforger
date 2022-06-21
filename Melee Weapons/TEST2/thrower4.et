@@ -1,0 +1,9 @@
+GenericEntity : "{43FDAF3FA0FF2299}Prefabs/Weapons/Attachments/Underbarrel/UGL_M203.et" {
+ ID "742B27471520E8C9"
+ components {
+  MuzzleInMagComponent "{B3A264F493CC5A18}" {
+   AmmoTemplate "{4572958B97361D4B}TEST2/knifeProjectile2.et"
+  }
+ }
+ coords 89.905 1.001 90.676
+}

@@ -1,0 +1,4 @@
+MatPBRBasic {
+ BCRMap "{75A7872FA522DC5B}Assets/Weapons/Rifles/Melee/Axe/Wood_Axe_BCR.edds"
+ NMOMap "{4D7F3CBD7C558EC5}Assets/Weapons/Rifles/Melee/Axe/Wood_Axe_NMO.edds"
+}

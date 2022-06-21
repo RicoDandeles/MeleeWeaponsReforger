@@ -1,0 +1,4 @@
+MatPBRBasic {
+ BCRMap "{224B43A6FD4A6DFD}Assets/Weapons/Rifles/Melee/Hatchet_BCR.edds"
+ NMOMap "{1A93F834243D3F63}Assets/Weapons/Rifles/Melee/Hatchet_NMO.edds"
+}

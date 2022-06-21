@@ -1,0 +1,26 @@
+GenericEntity {
+ ID "59A4F3D3AF5926DE"
+ components {
+  SignalsManagerComponent "{59A4F3D3B0B18D97}" {
+  }
+  SoundComponent "{59A4F3D3B0B18D45}" {
+   Filenames {
+   }
+  }
+  BaseTriggerComponent "{59A4F3D3B0B18ED5}" {
+   PROJECTILE_EFFECTS {
+    ExplosionEffect "{59A508E51AC9D822}" {
+     EffectPrefab "{7DA2AFFC7B4BE844}Prefabs/Weapons/Warheads/Warhead_Grenade_HE.et"
+     ParticleEffect "{C0E2E7DC28B71E2C}Particles/Enviroment/Campfire_medium_normal.ptc"
+    }
+   }
+   DELETE_ON_TRIGGER 0
+   TRIGGER_ALIVE 1
+  }
+  HitEffectComponent "{59A4F3D3B0B18EB4}" {
+   ParticleEffect "{E1E084593B8A05D2}Particles/Weapon/Smoke_grenade_M18_Yellow.ptc"
+  }
+ }
+ coords 80.554 1.001 107.305
+ Flags 0
+}

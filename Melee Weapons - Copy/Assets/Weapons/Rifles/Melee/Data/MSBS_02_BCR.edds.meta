@@ -1,0 +1,18 @@
+MetaFileClass {
+ Name "{401E4F6868726C5C}Assets/Weapons/Rifles/Melee/Data/MSBS_02_BCR.edds"
+ Configurations {
+  TGAResourceClass PC {
+   SourceFile "MSBS_02_BCR.tga"
+   Conversion ColorHQCompression
+   ColorSpace ToSRGB
+  }
+  TGAResourceClass XBOX_ONE : PC {
+  }
+  TGAResourceClass PS4 : PC {
+  }
+  TGAResourceClass HEADLESS : PC {
+  }
+  TGAResourceClass XBOX_SERIES : PC {
+  }
+ }
+}

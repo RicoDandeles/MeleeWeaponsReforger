@@ -1,0 +1,238 @@
+GenericEntity {
+ ID "59A543DD6FB32701"
+ components {
+  SignalsManagerComponent "{59A543DD5D64EAE7}" {
+  }
+  WeaponSoundComponent "{59A543DD5D64EAF0}" {
+   Filenames {
+   }
+  }
+  TimerTriggerComponent "{59A543DD5D64EA95}" {
+   PROJECTILE_EFFECTS {
+    ExplosionEffect "{59A543DD4EAF5F87}" {
+     EffectPrefab "{8C3C62C58D2DBEDA}Prefabs/Weapons/Warheads/Warhead_HEAT.et"
+     ParticleEffect "{C0E2E7DC28B71E2C}Particles/Enviroment/Campfire_medium_normal.ptc"
+    }
+   }
+   DELETE_ON_TRIGGER 0
+   TIMER 1
+  }
+  GrenadeMoveComponent "{59A543DD5D64EA70}" {
+   InitSpeed 30
+   Mass 0.397
+   TimeToLive 4.2
+   DeleteWhenStop 0
+   TriggerWhenStop 1
+   LayerPreset "Projectile"
+   ProjectileEffects {
+    BaseDamageEffect "{59A543DD5D64EA77}" {
+     DamageValue 1
+    }
+    HitSoundEffect "{59A543DD5D64EA72}" {
+     Filename "{71AA761577272A1B}Sounds/Music/Ingame/Music_Ingame.acp"
+    }
+   }
+   MinimalSpeedScale 1
+  }
+  InventoryItemComponent "{59A543DD5D6495FC}" {
+   Attributes SCR_ItemAttributeCollection "{59A543DD5D6495FD}" {
+    ItemDisplayName WeaponUIInfo "{59A543DD5D64EA2D}" {
+     Name "#AR-Weapon_M67_Name"
+     Description "#AR-Weapon_M67_Description"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{59A543DD5D64EA3E}" {
+     Weight 0.39
+     SizeSetupStrategy Volume
+     RestingUP Up
+     RestingAdditiveOffsetLS 0 0 0
+    }
+    ItemAnimationAttributes ItemAnimationAttributes "{59A543DD5D6495EB}" {
+     IkSettings {
+      ItemIKSettings "{59A543DD5D64EA1C}" {
+       MovementSpeedRange 0 3
+       IkSettingsStand 0
+       IkSettingsCrouch 0
+       IkSettingsProne 0
+      }
+      ItemIKSettings "{59A543DD5D6495E7}" {
+       Lowered 1
+       InAds 0
+       OutAds 0
+      }
+      ItemIKSettings "{59A543DD5D6495E2}" {
+       Jumping 1
+       InAds 0
+       OutAds 0
+      }
+      ItemIKSettings "{59A543DD5D6495EC}" {
+       ProneTurn 1
+       IkSettingsStand 4
+      }
+     }
+     AnimationInstance "{4FCBEA45CAEBC9C0}anims/workspaces/player/player_main_1h.asi"
+     ExcludeBonesBlend {
+      "RightHandProp"
+     }
+     AnimationIKPose "{B26FF590CB1A7B6C}Assets/Weapons/Grenades/M67/anims/anm/p_m67_ik.anm"
+    }
+    CustomAttributes {
+     PreviewRenderAttributes "{59A543DD5D6495FE}" {
+      CameraPreset Left
+      CameraOrbitAngles -25 -25 0
+      CameraDistanceToItem 0.7
+      FOV 10
+      AnimationInstance "{CD706CDA25024989}anims/workspaces/player/player_inventory_1handed.asi"
+     }
+    }
+    m_Size SLOT_1x1
+   }
+   WbPlacementFromAttributes 1
+  }
+  MeshObject "{59A543DD5D6495C0}" {
+   Object "{CB4B410E5D99D4CF}Assets/Weapons/Attachments/Bayonets/Bayonet_M9/Bayonet_M9.xob"
+   PixelSizeScale 2
+  }
+  Hierarchy "{59A543DD5D6495CB}" {
+  }
+  RigidBody "{59A543DD5D6495DF}" {
+   LayerPreset "FireGeo"
+   Mass 0.397
+   LinearDamping 0.4
+   AngularDamping 0.6
+   ModelGeometry 1
+   CCDRadius 0.1
+  }
+  SCR_MeleeWeaponProperties "{59A543DD5D6495A0}" {
+   m_aCollisionProbesPos {
+    0 0 0
+   }
+  }
+  SCR_WeaponAttachmentsStorageComponent "{59A543DD5D6547E7}" {
+   Enabled 0
+   Attributes SCR_ItemAttributeCollection "{59A543DD5D6547E5}" {
+    ItemDisplayName WeaponUIInfo "{59A543DD5D649585}" {
+     Name "#AR-Weapon_M67_Name"
+     Description "#AR-Weapon_M67_Description"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{59A543DD5D64958E}" {
+     Weight 0.39
+     SizeSetupStrategy Volume
+     ItemVolume 100
+    }
+    ItemAnimationAttributes ItemAnimationAttributes "{59A543DD5D649561}" {
+     IkSettings {
+      ItemIKSettings "{59A543DD5D64959D}" {
+       MovementSpeedRange 0 3
+      }
+      ItemIKSettings "{59A543DD5D649598}" {
+       Lowered 1
+       InAds 0
+       OutAds 0
+      }
+      ItemIKSettings "{59A543DD5D649562}" {
+       Jumping 1
+       InAds 0
+       OutAds 0
+      }
+     }
+     AnimationInstance "{4FCBEA45CAEBC9C0}anims/workspaces/player/player_main_1h.asi"
+     AnimInstanceBlendDuration 0.3
+     ExcludeBonesBlend {
+      "RightHandProp"
+     }
+     AnimationIKPose "{B26FF590CB1A7B6C}Assets/Weapons/Grenades/M67/anims/anm/p_m67_ik.anm"
+    }
+    CustomAttributes {
+     PreviewRenderAttributes "{59A543DD5D64956B}" {
+      CameraPreset Left
+      CameraDistanceToItem 1
+      FOV 8
+      AnimationInstance "{CD706CDA25024989}anims/workspaces/player/player_inventory_1handed.asi"
+     }
+    }
+    m_Size SLOT_1x1
+   }
+   StoragePurpose 32
+  }
+  WeaponComponent "{59A543DD5D650C4B}" {
+   components {
+    BaseItemAnimationComponent "{59A543DD5D655571}" {
+     AnimGraph "{3555B2B751CE338E}Assets/Weapons/Grenades/workspaces/Grenade_M67.agr"
+     AnimInstance "{D83FE76C4DC76160}Assets/Weapons/Grenades/workspaces/Grenade_M67.asi"
+     AlwaysActive 1
+     AnimInjection AnimationAttachmentInfo "{59A543DD5D6547D1}" {
+      AnimGraph "{FE49E462683C1D86}Assets/Weapons/Grenades/workspaces/Grenade.agr"
+      AnimInstance "{D447350B6157E561}Assets/Weapons/Grenades/workspaces/Player_main_M67.asi"
+      BindingName "Grenade"
+     }
+     BindWithInjection 1
+     MeshVisibilityConfigurations {
+      MeshesVisibilitySwitchConfig "{59A543DD5D6547AA}" {
+       Event "HidePin"
+       Meshes {
+        "ring" "ringHolder"
+       }
+      }
+      MeshesVisibilitySwitchConfig "{59A543DD5D6547A3}" {
+       Event "ShowPin"
+       Meshes {
+        "ring" "ringHolder"
+       }
+       HideMesh 0
+      }
+     }
+    }
+   }
+   isThrowable 1
+   WeaponType FragGrenade
+   shouldHandleObstruction 0
+   SoundInt 1000000
+   UIInfo GrenadeUIInfo "{59A543DD5D655556}" {
+    Name "#AR-Weapon_Grenade_Name"
+    Description "#AR-Weapon_Grenade_Name"
+    Icon "{29FA998781E23B91}UI/Textures/WeaponIcons/grenade_RGD-5.edds"
+    m_MagIndicator SCR_MagazineIndicatorConfiguration "{59A543DD5D655557}" {
+     m_sOutline "grenade-frag-m67"
+     m_bProgressBar 0
+    }
+    m_sAmmoType "#AR-AmmoType_M67"
+    m_bShowAmmoTypeText 1
+    m_eAmmoTypeFlags FRAG
+   }
+   WeaponSlotType "grenade"
+  }
+  ActionsManagerComponent "{59A543DD5D650D89}" {
+   ActionContexts {
+    UserActionContext "{59A543DD5D650DB6}" {
+     ContextName "default"
+     Position PointInfo "{59A543DD5D650DA9}" {
+      Offset 0 0.025 0
+     }
+    }
+   }
+   additionalActions {
+    SCR_PickUpItemAction "{59A543DD5D650D87}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo UIInfo "{59A543DD5D650D86}" {
+      Name "#AR-Inventory_PickUp"
+     }
+    }
+    SCR_EquipWeaponAction "{59A543DD5D650D88}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo UIInfo "{59A543DD5D650D8B}" {
+      Name "#AR-Inventory_Equip"
+     }
+     "Sort Priority" 1
+    }
+   }
+  }
+  RplComponent "{59A543DD5D650D95}" {
+  }
+ }
+ coords 77.082 1.072 103.379
+ scale 10
+}

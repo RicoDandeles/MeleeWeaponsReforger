@@ -1,0 +1,7 @@
+AnimSrcGraph {
+ AnimSetTemplate "{BCEF5F98D3FA586E}anims/workspaces/player/test.ast"
+ ControlTemplate AnimSrcGCT "{59AA402B8B8E9CCA}" {
+ }
+ Debug AnimSrcGD "{59AA402B8B8E9CAE}" {
+ }
+}

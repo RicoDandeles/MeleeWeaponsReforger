@@ -1,0 +1,116 @@
+Projectile {
+ ID "59A54D1380D960DA"
+ components {
+  SoundComponent "{59A54D13894658EB}" {
+   Filenames {
+    "{12A94705DF2BFD25}Sounds/Items/_SharedData/PickUp/Items_PickUp_Generic.acp"
+   }
+  }
+  CollisionTriggerComponent "{59A54D13894658A4}" {
+   PROJECTILE_EFFECTS {
+    ExplosionEffect "{59A54D13894658A7}" {
+     EffectPrefab "{620E8AF45A5143D7}Prefabs/Weapons/Warheads/Warhead_Grenade_HE_M406.et"
+     ParticleEffect "{728768DE31C8D1DE}Particles/Weapon/Explosion_VOG25.ptc"
+     SoundEvent "SOUND_EXPLOSION"
+    }
+   }
+   SafetyDistance 15
+  }
+  InventoryItemComponent "{59A54D1389465858}" {
+   Attributes SCR_ItemAttributeCollection "{59A54D1389465851}" {
+    ItemDisplayName UIInfo "{59A54D138946589C}" {
+     Name "#AR-Magazine_M406_Name"
+     Description "#AR-Magazine_M406_Description"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{59A54D138946586A}" {
+     Weight 0.23
+     SizeSetupStrategy Volume
+     ItemVolume 100
+    }
+    CustomAttributes {
+     PreviewRenderAttributes "{59A54D1389465843}" {
+      CameraOrbitAngles -45 -45 0
+      CameraDistanceToItem 0.15
+     }
+    }
+    m_Size SLOT_1x1
+   }
+  }
+  MagazineComponent "{59A54D1389465BC0}" {
+   MagazineWell MagazineWellUS_UGL "{59A54D138946583A}" {
+   }
+   UIInfo MagazineUIInfo "{59A54D1389465BC1}" {
+    m_sAmmoCaliber "#AR-AmmunitionID_40x46mm"
+    m_sAmmoType "#AR-AmmoType_M406"
+    m_bShowAmmoTypeText 1
+    m_eAmmoTypeFlags HE
+    m_MagIndicator SCR_MagazineIndicatorConfiguration "{59A54D1389465BC2}" {
+     m_sOutline "grenade-gl-m406"
+     m_bProgressBar 0
+    }
+   }
+   MaxAmmo 1
+  }
+  MeshObject "{59A54D1389465BB7}" {
+   Object "{0B14D71F69360619}Assets/Weapons/Ammo/Grenades/M433/M433.xob"
+  }
+  Hierarchy "{59A54D1389465BB1}" {
+  }
+  RigidBody "{59A54D1389465B87}" {
+   LayerPreset "Projectile"
+   ModelGeometry 1
+  }
+  ShellMoveComponent "{59A54D1389465AE1}" {
+   InitSpeed 2
+   InitSpeedVariation 1
+   Mass 1
+   TimeToLive 2
+   DeleteWhenStop 0
+   LayerPreset "Projectile"
+   ProjectileEffects {
+    BaseDamageEffect "{59A54D1389465B93}" {
+     DamageValue 5
+    }
+   }
+   Diameter 40
+   PenetrationUse 1
+   PenetrationDepth 10
+   PenetrationDensity 1
+   PenetrationSpeed 2
+  }
+  SimpleSoundComponent "{59A54D1389465AE8}" {
+   Filenames {
+    "{12A94705DF2BFD25}Sounds/Items/_SharedData/PickUp/Items_PickUp_Generic.acp"
+   }
+   DistanceManagement 0
+  }
+  ActionsManagerComponent "{59A54D1389465AAE}" {
+   ActionContexts {
+    UserActionContext "{59A54D1389465ACC}" {
+     ContextName "default"
+     Position PointInfo "{59A54D1389465ACE}" {
+     }
+    }
+   }
+   additionalActions {
+    SCR_PickUpItemAction "{59A54D1389465AA5}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo UIInfo "{59A54D1389465AA6}" {
+      Name "#AR-Inventory_PickUp"
+      Icon "{55B22CEB4340AB0E}UI/Textures/UserActions/pickupaction.edds"
+     }
+    }
+   }
+  }
+  RplComponent "{59A54D1389465AA9}" {
+  }
+ }
+ coords 49.783 1.001 80.408
+ SpawnAsCartridge 1
+ ProjectileVisibleTimeScale 2
+ ProjectileModel "{D79EBB1BB388141E}Assets/Weapons/Ammo/Grenades/M433/M433_projectile.xob"
+ CartridgeModel "{0B14D71F69360619}Assets/Weapons/Ammo/Grenades/M433/M433.xob"
+ CartridgeLayerPreset "ItemFireView"
+}

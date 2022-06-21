@@ -1,0 +1,20 @@
+$grp SCR_ChimeraCharacter : "{26A9756790131354}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_Rifleman.et" {
+ {
+  coords 4659.5 20.37 10739.967
+ }
+ {
+  coords 4650.046 20.168 10745.265
+ }
+ {
+  coords 4654.334 20.266 10741.576
+ }
+ {
+  coords 4650.311 20.172 10744.038
+ }
+}
+GenericEntity : "{8BD55E829F223B7D}Prefabs/Weapons/Melee Weapons/hatchet.et" {
+ coords 4659.736 20.351 10742.563
+}
+GenericEntity : "{EF4F5767AF262757}Prefabs/Weapons/Melee Weapons/sledge_hammer.et" {
+ coords 4660.159 20.36 10743.294
+}

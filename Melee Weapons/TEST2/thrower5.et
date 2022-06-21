@@ -1,0 +1,290 @@
+GenericEntity {
+ ID "59A88EE3E766F200"
+ components {
+  SignalsManagerComponent "{59A88EE3F7CAC20E}" {
+  }
+  WeaponSoundComponent "{59A88EE3F7CACDFE}" {
+   Mute 1
+   Filenames {
+    "{D8F675F3468362E2}Sounds/Weapons/_SharedData/Weapons_Zeroing.acp" "{0EDF037F2DC3E098}Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_UGL_Generic.acp" "{6DECA775666513C9}Sounds/Weapons/Attachments/Underbarrel/M203/Weapons_Attch_Underbarrel_M203_Handling.acp" "{1A619AD876DD71BE}Sounds/Weapons/Attachments/Underbarrel/M203/Weapons_Attch_Underbarrel_M203_Shot.acp"
+   }
+  }
+  InventoryItemComponent "{59A88EE3F7CACD47}" {
+   Enabled 0
+   Attributes SCR_ItemAttributeCollection "{59A88EE3F7CACD7C}" {
+    ItemDisplayName WeaponUIInfo "{59A88EE3F7CACDB5}" {
+     Name "#AR-Weapon_M203_Name"
+     Description "#AR-Weapon_M203_Description"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{59A88EE3F7CACDBB}" {
+     Weight 1.36
+     SizeSetupStrategy Volume
+     ItemVolume 1000
+    }
+    CustomAttributes {
+     WeaponAttachmentAttributes "{59A88EE3F7CACD88}" {
+      AttachmentType AttachmentUnderBarrelM203 "{59A88EE3F7CACD8A}" {
+      }
+     }
+     PreviewRenderAttributes "{59A88EE3F7CACD74}" {
+      CameraDistanceToItem 2
+      ItemRenderRotation 0 0 0
+      FOV 10
+     }
+    }
+    m_Size SLOT_1x1
+   }
+  }
+  MeshObject "{59A88EE3F7CACD2C}" {
+   Enabled 1
+   Object "{064CF78A5EB39F84}Assets/Weapons/Attachments/Underbarrel/M203/M203.xob"
+   Materials {
+    MaterialAssignClass "{59AA44A9D4A1AE30}" {
+     SourceMaterial "M203"
+     AssignedMaterial "{8FBC3A6E946F056E}Common/Materials/Default_Transparent.emat"
+    }
+   }
+  }
+  MuzzleInMagComponent "{59A88EE3F7CACF72}" {
+   components {
+    SightsComponent "{59A88EE3F7CACCAA}" {
+     SightsPosition PointInfo "{59A88EE3F7CACD1E}" {
+      PivotID "w_sight_m203"
+      Offset 0 0.15 -0.36
+     }
+     SightsRanges {
+      SightRangeInfo "{59A88EE3F7CACCEF}" {
+       Range 0 50
+       WeaponPosition PointInfo "{59A88EE3F7CACCE1}" {
+        Offset 0 -0.04464 0
+        Angles 2.43277 0 0
+       }
+      }
+      SightRangeInfo "{59A88EE3F7CACCF5}" {
+       Range 0 100
+       WeaponPosition PointInfo "{59A88EE3F7CACCF7}" {
+        Offset 0 -0.07427 0
+        Angles 4.80273 0 0
+       }
+      }
+      SightRangeInfo "{59A88EE3F7CACCFE}" {
+       Range 0 150
+       WeaponPosition PointInfo "{59A88EE3F7CACCFF}" {
+        Offset 0 -0.10559 0
+        Angles 7.16256 0 0
+       }
+      }
+      SightRangeInfo "{59A88EE3F7CACCC7}" {
+       Range 0 200
+       WeaponPosition PointInfo "{59A88EE3F7CACCF8}" {
+        Offset 0 -0.14093 0
+        Angles 9.5046 0 0
+       }
+      }
+      SightRangeInfo "{59A88EE3F7CACCC0}" {
+       Range 0 250
+       WeaponPosition PointInfo "{59A88EE3F7CACCC2}" {
+        Offset 0 -0.18064 0
+        Angles 11.8213 0 0
+       }
+      }
+     }
+     SightsFOVInfo SCR_FixedFOVInfo "{59A88EE3F7CACCD5}" {
+      m_fFieldOfView 50
+     }
+     SightsPointFront PointInfo "{59A88EE3F7CACCD0}" {
+      PivotID "w_sight_m203"
+      Offset 0 0.07 0.36
+     }
+     SightsPointRear PointInfo "{59A88EE3F7CACCDC}" {
+      PivotID "w_sight_m203"
+      Offset 0 0.15 -0.36
+     }
+     SoundInt 9001
+    }
+    SCR_MuzzleEffectComponent "{59A88EE3F7CACC87}" {
+     ParticleEffect "{2062FCAF09834699}Particles/Weapon/Smoke_M203.ptc"
+     EffectPosition EntitySlotInfo muzzle_effect {
+      Offset 0 0.04 0.28
+     }
+    }
+   }
+   MuzzleType UGLMuzzle
+   MuzzleEndPositions {
+    PointInfo "{59A88EE3F7CACC8F}" {
+    }
+   }
+   ProjectileSpawnPositions {
+    PointInfo "{59A88EE3F7CACC96}" {
+     PivotID "w_barrel_m203"
+     Offset 0 0 -0.12
+    }
+   }
+   FireModes {
+    BaseFireMode "{59A88EE3F7CACC4D}" {
+     RoundsPerMinute 100
+     UIName "M203 - Single"
+    }
+   }
+   MissileWeaponLink BaseMissileWeaponLinkClass "{59A88EE3F7CACC54}" {
+   }
+   MagazineWell MagazineWellUS_UGL "{59A88EE3F7CACC5A}" {
+   }
+   WeaponAimModifiers {
+    SwayWeaponAimModifier "{59A88EE3F7CACC33}" {
+     Name "SWAY"
+     "Linear Damping" 0.85 0.5 0.825
+     "Linear Magnitude" 30
+     "Angular Damping" 0.95 0.3 0.4
+     "Angular Magnitude" 100
+     "ADS Multiplier" 0.3
+     "Focus Multiplier" 0.2
+     "Stamina Magnitude Curve" {
+      0 1 0.491 0.961 0.722 0.867 0.828 0.727 0.947 0.518 1 0.087
+     }
+     "Stamina Scale Mins" 0.4 0.5 0
+     "Stamina Scale Maxs" 1.4 1.4 0
+     "Linear Inertia Magnitude" -0.00175 -0.02 0
+     "Angular Inertia Magnitude" -15 -15 -15
+     "Angular Inertia Magnitude ADS" 4 0 -6.25
+     "Linear Inertia Decay Speed" 4.9
+     "Angular Inertia Decay Speed" 4.7
+    }
+    ZeroingWeaponAimModifier "{59A88EE3F7CACC3D}" {
+    }
+    RecoilWeaponAimModifier "{59A88EE3F7CACC19}" {
+     LinearData RecoilData "{59A88EE3F7CACC0A}" {
+      "Curve Y" {
+       0 0.5 0.035 1 0.55 0.65 1 0.5
+      }
+      "Curve Z" {
+       0 0.5 0.018 0.65 0.043 1 0.251 0.533 0.5 0.45 0.75 0.5 1 0.5
+      }
+      "Curve Time Scale" 1.35
+      "Curve Magnitudes" 1 1 1.5
+      "Curve Mins" 0 0.02 -0.048
+      "Curve Maxs" 0 0.015 -0.042
+     }
+     AngularData RecoilData "{59A88EE3F7CACC13}" {
+      "Curve Y" {
+       0 0.5 0.035 1 0.55 0.65 1 0.5
+      }
+      "Curve Z" {
+       0 0.5 0.018 0.65 0.043 1 0.251 0.533 0.5 0.45 0.75 0.5 1 0.5
+      }
+      "Curve Time Scale" 1.3
+      "Curve Magnitudes" 1 1 1
+      "Curve Mins" 0 2 -5
+      "Curve Maxs" 0 4 -4
+     }
+     TurnOffsetData RecoilData "{59A88EE3F7CACC1A}" {
+      "Curve Y" {
+       0 0.5 0.101 1 0.539 0.412 0.841 0.542 1 0.5
+      }
+      "Curve Time Scale" 1.5
+      "Curve Magnitudes" 0 1 0
+      "Curve Mins" 0 0.75 0
+      "Curve Maxs" 0 0.95 0
+     }
+    }
+   }
+   UIInfo MuzzleUIInfo "{59A88EE3F7CACFC9}" {
+    m_bShowFiremode 0
+    m_MagIndicator SCR_MagazineIndicatorConfiguration "{59A88EE3F7CACFCA}" {
+     m_sOutline "grenade-gl-m406"
+     m_bProgressBar 0
+    }
+   }
+   CustomAnimationAttributes ItemAnimationAttributes "{59A88EE3F7CACFA5}" {
+    AnimationIKPose "{16FC70F15C5507DD}Assets/Weapons/Rifles/M16A2/anims/anmM203/p_m16_M203_UGL_ik.anm"
+    AnimInjectionPriority -2
+   }
+   ProjectilePosition InventoryStorageSlot "{517A8378FD27B41A}" {
+    PivotID "w_barrel_m203"
+    Offset 0 0 -0.12
+   }
+   AmmoTemplate "{4572958B97361D4B}TEST2/knifeProjectile2.et"
+   ProjectileVisible 0
+   IsAttachment 1
+   ReloadUGL 0
+  }
+  RigidBody "{59A88EE3F7CACF7A}" {
+   Enabled 1
+   ModelGeometry 1
+  }
+  SCR_WeaponAttachmentsStorageComponent "{59A88EE3F7CAC417}" {
+   Attributes SCR_ItemAttributeCollection "{59A88EE3F7CAC415}" {
+    ItemDisplayName WeaponUIInfo "{59A88EE3F7CACF57}" {
+     Name "#AR-Weapon_M203_Name"
+     Description "#AR-Weapon_M203_Description"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{59A88EE3F7CACF52}" {
+     Weight 1.36
+     SizeSetupStrategy Volume
+     ItemVolume 1000
+    }
+    ItemAnimationAttributes ItemAnimationAttributes "{59A88EE3F7CACF2F}" {
+     AnimationAttachments {
+      AnimationAttachmentInfo "{59A88EE3F7CACF20}" {
+       BindingName "Weapon"
+      }
+     }
+     AnimInjectionPriority -1
+    }
+    CustomAttributes {
+     PreviewRenderAttributes "{59A88EE3F7CACF2A}" {
+      CameraPreset Right
+      CameraDistanceToItem 2
+      ItemRenderRotation 0 0 0
+      FOV 10
+     }
+     WeaponAttachmentAttributes "{59A88EE3F7CAC412}" {
+      AttachmentType AttachmentUnderBarrelM203 "{59A88EE3F7CACF34}" {
+      }
+     }
+    }
+    m_Size SLOT_1x1
+   }
+   Priority -1
+   StoragePurpose 32
+  }
+  ActionsManagerComponent "{59A88EE3F7CAC5DC}" {
+   Enabled 0
+   ActionContexts {
+    UserActionContext "{59A88EE3F7CAC42F}" {
+     ContextName "user"
+     Position PointInfo "{59A88EE3F7CAC42C}" {
+     }
+    }
+   }
+   additionalActions {
+    SCR_EquipWeaponAttachment "{59A88EE3F7CAC5C3}" {
+     ParentContextList {
+      "user"
+     }
+     UIInfo UIInfo "{59A88EE3F7CAC5C1}" {
+      Name "#AR-UserAction_AttachToWeapon"
+     }
+    }
+    SCR_PickUpItemAction "{59A88EE3F7CAC5D8}" {
+     ParentContextList {
+      "user"
+     }
+     UIInfo UIInfo "{59A88EE3F7CAC5CC}" {
+      Name "#AR-Inventory_PickUp"
+     }
+    }
+   }
+  }
+  BaseItemAnimationComponent "{59A88EE3F7CAC5E6}" {
+   AnimGraph "{288D8FF8F78E3DA0}Assets/Weapons/Rifles/workspaces/m16_M203.agr"
+   AnimInstance "{2960BD42164C5E89}Assets/Weapons/Rifles/workspaces/m16_M203_weapon.asi"
+   StartNode "UGLMasterControl"
+   SimulateOnHeadless 0
+  }
+  RplComponent "{59A88EE3F7CAC5EC}" {
+  }
+ }
+ coords 97.04 1.001 78.102
+ Flags 4194306
+}
