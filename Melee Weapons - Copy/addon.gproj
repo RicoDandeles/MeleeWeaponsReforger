@@ -1,8 +1,0 @@
-GameProject {
- ID "MeleeWeapons"
- GUID "597F7D20EAE958F3"
- TITLE "Melee Weapons"
- Dependencies {
-  "58D0FB3206B6F859"
- }
-}

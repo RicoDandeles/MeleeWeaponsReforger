@@ -1,5 +1,0 @@
-class MeleeUIInfo : WeaponUIInfo 
-{
-//test
-
-}
