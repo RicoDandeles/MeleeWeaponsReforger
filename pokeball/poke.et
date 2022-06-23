@@ -1,0 +1,14 @@
+GenericEntity : "{E8F00BF730225B00}Prefabs/Weapons/Grenades/Grenade_M67.et" {
+ ID "E8F00BF730225B00"
+ components {
+  MeshObject "{51EC93F29BA5F234}" {
+   Materials {
+    MaterialAssignClass "{59AB3A76750FECDB}" {
+     SourceMaterial "m67"
+     AssignedMaterial "{778497B84232AD76}pokeball/pokeballMat.emat"
+    }
+   }
+  }
+ }
+ coords 0 0 0
+}

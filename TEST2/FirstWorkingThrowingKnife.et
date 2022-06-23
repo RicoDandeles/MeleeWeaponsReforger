@@ -1,4 +1,4 @@
-MeleeWeaponEntity {
+MW_MeleeWeaponEntity {
  ID "59AA9C77F58E8EA7"
  components {
   SignalsManagerComponent "{59A6A03A12B01DF5}" {
@@ -22,6 +22,8 @@ MeleeWeaponEntity {
      Description "test"
     }
     ItemPhysAttributes ItemPhysicalAttributes "{59A88256E6833EFD}" {
+     RestingAdditiveRotationLS 90 0 0
+     PivotBoneName "Scene_Root"
     }
     ItemAnimationAttributes ItemAnimationAttributes "{59A88256E74F167F}" {
      IkSettings {
@@ -162,10 +164,6 @@ MeleeWeaponEntity {
   RplComponent "{59A6A03A1786F1A4}" {
   }
  }
- coords 95.248 1.108 74.277
- angleX -0.508
- angleY -58.979
- angleZ 88.452
- scale 16.9
+ coords 0 0 0
  Flags 4194307
 }

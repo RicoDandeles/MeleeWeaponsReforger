@@ -1,0 +1,114 @@
+ManualProjectile {
+ ID "59A88EE5D8EFB58E"
+ components {
+  CollisionTriggerComponent "{59A88EE664D957FB}" {
+   Enabled 0
+   PROJECTILE_EFFECTS {
+    BaseProjectileEffect "{59A88EE5A9B5F48A}" {
+    }
+    BaseDamageEffect "{59AA39463F12C70A}" {
+     DamageValue 368.4
+    }
+   }
+   DELETE_ON_TRIGGER 0
+   SafetyDistance 0
+  }
+  InventoryItemComponent "{59A88EE664D95799}" {
+   Attributes SCR_ItemAttributeCollection "{59A88EE664D95796}" {
+    ItemDisplayName UIInfo "{59A88EE664D957AD}" {
+     Name "#AR-Magazine_M433_Name"
+     Description "#AR-Magazine_M433_Description"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{59A88EE664D957B1}" {
+     Weight 0.23
+     SizeSetupStrategy Volume
+     ItemVolume 100
+    }
+    CustomAttributes {
+     PreviewRenderAttributes "{59A88EE664D9578F}" {
+      CameraOrbitAngles -45 -45 0
+      CameraDistanceToItem 0.15
+     }
+    }
+    m_Size SLOT_1x1
+   }
+  }
+  MagazineComponent "{59A88EE664D95730}" {
+   MagazineWell MagazineWellUS_UGL "{59A88EE664D95773}" {
+   }
+   UIInfo MagazineUIInfo "{59A88EE664D95731}" {
+    m_sAmmoCaliber "#AR-AmmunitionID_40x46mm"
+    m_sAmmoType "#AR-AmmoType_M433"
+    m_bShowAmmoTypeText 1
+    m_eAmmoTypeFlags 24
+    m_MagIndicator SCR_MagazineIndicatorConfiguration "{59A88EE664D95732}" {
+     m_sOutline "grenade-gl-m406"
+     m_bProgressBar 0
+    }
+   }
+   MaxAmmo 1
+  }
+  MeshObject "{59A88EE664D956ED}" {
+   Object "{CB4B410E5D99D4CF}Assets/Weapons/Attachments/Bayonets/Bayonet_M9/Bayonet_M9.xob"
+  }
+  Hierarchy "{59A88EE664D956E8}" {
+  }
+  RigidBody "{59A88EE664D956FB}" {
+   Enabled 0
+   LayerPreset "Projectile"
+   ModelGeometry 1
+  }
+  ShellMoveComponent "{59A88EE664D956DD}" {
+   Enabled 0
+   InitSpeed 10.1
+   Mass 0.25
+   TimeToLive 30
+   DeleteWhenStop 0
+   LayerPreset "Projectile"
+   ProjectileEffects {
+    BaseDamageEffect "{59A88EE664D956DE}" {
+     DamageValue 292.9
+    }
+   }
+   Diameter 40
+   PenetrationUse 1
+   PenetrationDepth 10
+   PenetrationDensity 1
+   PenetrationSpeed 80
+  }
+  SimpleSoundComponent "{59A88EE664D956A1}" {
+   Filenames {
+    "{12A94705DF2BFD25}Sounds/Items/_SharedData/PickUp/Items_PickUp_Generic.acp"
+   }
+   DistanceManagement 0
+  }
+  ActionsManagerComponent "{59A88EE664D95665}" {
+   ActionContexts {
+    UserActionContext "{59A88EE664D95686}" {
+     ContextName "default"
+     Position PointInfo "{59A88EE664D956B8}" {
+     }
+    }
+   }
+   additionalActions {
+    SCR_PickUpItemAction "{59A88EE664D9569C}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo UIInfo "{59A88EE664D9569E}" {
+      Name "#AR-Inventory_PickUp"
+      Icon "{55B22CEB4340AB0E}UI/Textures/UserActions/pickupaction.edds"
+     }
+    }
+   }
+  }
+  RplComponent "{59A88EE664D95660}" {
+  }
+ }
+ coords 97.042 1.001 77.894
+ SpawnAsCartridge 1
+ ProjectileVisibleTimeScale 2
+ ProjectileModel "{CB4B410E5D99D4CF}Assets/Weapons/Attachments/Bayonets/Bayonet_M9/Bayonet_M9.xob"
+ CartridgeModel "{CB4B410E5D99D4CF}Assets/Weapons/Attachments/Bayonets/Bayonet_M9/Bayonet_M9.xob"
+ CartridgeLayerPreset "ItemFireView"
+}

@@ -1,0 +1,9 @@
+MatPBRBasic {
+ AlphaTest 0.824
+ AlphaMul 1.602
+ BCRMap "{9DED219BF3090030}pokeball/pokeballBCR.edds"
+ OpacityMap "{46FF0DD0FC253059}pokeball/shittypokeballAlpha.edds"
+ NMOMap "{A5359A092A7E52AE}pokeball/pokeballNMO.edds"
+ GlobalMapsUVTransform MatUVTransform "{59AB46192CC7B7E2}" {
+ }
+}

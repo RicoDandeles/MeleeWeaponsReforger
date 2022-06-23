@@ -1,0 +1,171 @@
+MW_MeleeWeaponEntity {
+ ID "59AEC3983A565501"
+ components {
+  SignalsManagerComponent "{59A6A03A12B01DF5}" {
+  }
+  MeshObject "{59A6A03A1786F67D}" {
+   Object "{F2E1926C50C222E1}Assets/Weapons/Attachments/Bayonets/Bayonet_6Kh4/Bayonet_6Kh4.xob"
+  }
+  Hierarchy "{59A6A03A1786F678}" {
+  }
+  RigidBody "{59A6A03A1786F64B}" {
+   ModelGeometry 1
+  }
+  SCR_MeleeWeaponProperties "{59A87E77D8323DEB}" {
+   m_fDamage 66.371
+   m_fExecutionTime 0.13
+  }
+  SCR_WeaponAttachmentsStorageComponent "{59A88256FBCB70A7}" {
+   Attributes SCR_ItemAttributeCollection "{59A88256F7A9ADA8}" {
+    ItemDisplayName WeaponUIInfo "{59A88256E96BAA30}" {
+     Name "test"
+     Description "test"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{59A88256E6833EFD}" {
+    }
+    ItemAnimationAttributes ItemAnimationAttributes "{59A88256E74F167F}" {
+     IkSettings {
+      ItemIKSettings "{59A88253888A280E}" {
+       IkSettingsStand 7
+       IkSettingsCrouch 7
+       IkSettingsProne 7
+      }
+      ItemIKSettings "{59A8825388283ECA}" {
+       IkSettingsStand 7
+       IkSettingsCrouch 7
+       IkSettingsProne 6
+      }
+      ItemIKSettings "{59A8825389FE58B7}" {
+       IkSettingsStand 6
+       IkSettingsCrouch 6
+       IkSettingsProne 6
+      }
+     }
+     AnimationInstance "{21158E82688907CC}anims/workspaces/player/player_main_rifle_m16a2.asi"
+     AnimationIKPose "{9CA239925FE3C73A}Assets/Weapons/Rifles/M16A2/anims/anmM203/p_m16_M203_ik.anm"
+    }
+    m_SlotType SLOT_WEAPONS_STORAGE
+   }
+   StoragePurpose 32
+  }
+  WeaponAttachmentsStorageComponent "{59A6A039537CAFDE}" {
+   Enabled 0
+   Attributes SCR_ItemAttributeCollection "{59A6A0394DAA6EBB}" {
+    ItemDisplayName WeaponUIInfo "{59A6EB5BB80AB06C}" {
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{59A6EB5BBF51C327}" {
+    }
+    ItemAnimationAttributes ItemAnimationAttributes "{59A6EB5BBF94C68E}" {
+    }
+    m_Size SLOT_1x1
+   }
+  }
+  WeaponComponent "{59A6A03A0B05C007}" {
+   components {
+    AttachmentSlotComponent "{59A6EBC3B92D05C9}" {
+     AttachmentSlot InventoryStorageSlot Thrower {
+      PivotID "Scene_Root"
+      Prefab "{B47E54C648DDF6A9}TEST2/thrower5.et"
+     }
+     AttachmentType AttachmentUnderBarrelM203 "{59A87E776CD53FEA}" {
+     }
+    }
+    MuzzleComponent "{59A87E77107D80F6}" {
+     FireModes {
+      BaseFireMode "{59A87E7713791692}" {
+       UIName "Normal"
+      }
+     }
+     SupportsLowered 1
+    }
+    BaseItemAnimationComponent "{59A6A03F0B40A55B}" {
+     Enabled 0
+     AnimGraph "{3555B2B751CE338E}Assets/Weapons/Grenades/workspaces/Grenade_M67.agr"
+     AnimInstance "{D83FE76C4DC76160}Assets/Weapons/Grenades/workspaces/Grenade_M67.asi"
+     AlwaysActive 1
+     AnimInjection AnimationAttachmentInfo "{59A6A03F01FF6D6C}" {
+      AnimGraph "{FE49E462683C1D86}Assets/Weapons/Grenades/workspaces/Grenade.agr"
+      AnimInstance "{D447350B6157E561}Assets/Weapons/Grenades/workspaces/Player_main_M67.asi"
+      BindingName "Grenade"
+     }
+     BindWithInjection 1
+     AnimCommandsToBind {
+      ""
+     }
+     MeshVisibilityConfigurations {
+      MeshesVisibilitySwitchConfig "{59A6A03F5A71557B}" {
+       Event "HidePIn"
+       Meshes {
+        "ring" "ringHolder"
+       }
+      }
+      MeshesVisibilitySwitchConfig "{59A6A03F5A174044}" {
+       Event "ShowPin"
+       Meshes {
+        "ring" "ringHolder"
+       }
+       HideMesh 0
+      }
+     }
+    }
+    WeaponAnimationComponent "{59A6A03801A52629}" {
+     AnimGraph "{288D8FF8F78E3DA0}Assets/Weapons/Rifles/workspaces/m16_M203.agr"
+     AnimInstance "{2960BD42164C5E89}Assets/Weapons/Rifles/workspaces/m16_M203_weapon.asi"
+     StartNode "RifleMasterControl"
+     AlwaysActive 1
+     AnimInjection AnimationAttachmentInfo "{59A6A0382B0CB62F}" {
+      AnimGraph "{288D8FF8F78E3DA0}Assets/Weapons/Rifles/workspaces/m16_M203.agr"
+      AnimInstance "{D23E2C738E4D3A65}Assets/Weapons/Rifles/workspaces/m16_M203_player.asi"
+      BindingName "Weapon"
+     }
+     BindWithInjection 1
+     AnimCommandsToBind {
+      ""
+     }
+    }
+   }
+   SignalsSourceAccess SignalsSourceAccessClass "{59A6A03A071126ED}" {
+   }
+   WeaponType Rifle
+   IkObstructionEnabled 1
+   obstructionTestCharacterOffset 0 0 0
+   obstructionTestAddedLength -0.1
+   obstructionTestBreakingThreshold 0.7
+   ObstructionAlphaThreshold 1
+   obstructionTestBBScale 0.06 0.06 0.05
+   UIInfo WeaponUIInfo "{59A88256A3FCE7BF}" {
+    Name "#AR-Weapon_M16A2_Name"
+    Description "#AR-Weapon_M16A2_Description"
+    Icon "{916A805D638389C5}UI/Textures/WeaponIcons/weapon_AK74_GL.edds"
+    m_MagIndicator SCR_MagazineIndicatorConfiguration "{59A88256D9CA19BA}" {
+    }
+   }
+   WeaponSlotType "primary"
+   WeaponOffset 0 0 0
+   WeaponOffsetADS 0 0 0
+  }
+  ActionsManagerComponent "{59A6A03A1786F1DD}" {
+   ActionContexts {
+    UserActionContext "{59A6A03A1786F1DF}" {
+     ContextName "default"
+     Radius 3.216
+    }
+   }
+   additionalActions {
+    SCR_EquipWeaponAction "{59A6A03A44037361}" {
+     ParentContextList {
+      "default"
+     }
+    }
+   }
+  }
+  RplComponent "{59A6A03A1786F1A4}" {
+  }
+ }
+ coords 95.248 1.108 74.277
+ angleX -0.508
+ angleY -58.979
+ angleZ 88.452
+ scale 16.9
+ Flags 4194307
+}

@@ -1,4 +1,4 @@
-MeleeProjectile {
+MW_ManualProjectile {
  ID "59A88EE5D8EFB58E"
  components {
   CollisionTriggerComponent "{59A88EE664D957FB}" {
