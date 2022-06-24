@@ -3,8 +3,12 @@ class MW_MeleeWeaponEntityClass : GenericEntityClass
 
 class MW_MeleeWeaponEntity : GenericEntity 
 {
+	
+	//[Attribute("", UIWidgets.ResourcePickerThumbnail, "Projectile assigned to this entity", params: "et", category : "Weapon Configuration")]
+	//private ResourceName projectilePrefab;
+
+
 	MuzzleInMagComponent muzzleInMagComponent; 
-	Projectile copyProjectile; 
 	WeaponComponent weaponComponent;
 	AttachmentSlotComponent thrower;			//must be present in the hierarchy
 	
@@ -12,16 +16,45 @@ class MW_MeleeWeaponEntity : GenericEntity
 	
 	void MW_MeleeWeaponEntity(IEntitySource src, IEntity parent)
 	{
-		Print("Init melee weapon");
-		//copyProjectile = Projectile(src, this);		//makes stuff crash if it's right here... not sure why 
-		
 		SetEventMask(EntityEvent.INIT|EntityEvent.SIMULATE);
-
 	}
 	
 	
 	
 	MW_ManualProjectile t2;
+	
+	override void EOnInit(IEntity owner)
+	{
+		
+		if (FindComponent(WeaponComponent))
+			weaponComponent = WeaponComponent.Cast(FindComponent(WeaponComponent));
+
+
+		if (FindComponent(AttachmentSlotComponent))
+		{
+			//Print("Found attachment slot");
+			thrower = AttachmentSlotComponent.Cast(FindComponent(AttachmentSlotComponent));		//this will manage the throwing part.
+			
+			IEntity attachmentThrower = thrower.GetAttachedEntity();
+			
+			if (attachmentThrower)
+			{
+				if (attachmentThrower.FindComponent(MuzzleInMagComponent))
+				{
+					muzzleInMagComponent = MuzzleInMagComponent.Cast(attachmentThrower.FindComponent(MuzzleInMagComponent));
+					BaseMagazineComponent t = muzzleInMagComponent.GetMagazine();
+				}
+
+				
+			}
+			
+		
+		
+		
+		}
+			
+	
+	}
 	
 	
 	override void EOnFrame(IEntity owner, float timeSlice)
@@ -30,7 +63,7 @@ class MW_MeleeWeaponEntity : GenericEntity
 
 		if (muzzleInMagComponent)
 		{
-			BaseMagazineComponent t = muzzleInMagComponent.GetMagazine();
+			BaseMagazineComponent t = muzzleInMagComponent.GetMagazine();		//WE NEED LOGIC TO SET PROJECTILES!!!
 			
 			
 			if (!t2 && t)
@@ -55,51 +88,26 @@ class MW_MeleeWeaponEntity : GenericEntity
 				impulse[2] = impulse[2] * 10;
 				Print(impulse);
 				t2.addedPhysics.ApplyImpulse(impulse);
+				
+				
+				// Spawn prefab. We need to rmeove immediately the knife from the player inv 
+				
+				
+				// todo should swap automatically to another weapon
+				//reset animations and delete knife from player's hand
+				ChimeraCharacter character = ChimeraCharacter.Cast(owner.GetParent());		//should be the parent?
+				CharacterControllerComponent charController = character.GetCharacterController();
+				InventoryStorageManagerComponent inventoryComp = charController.GetInventoryStorageManager();
+				BaseWeaponManagerComponent baseWeaponComp = charController.GetWeaponManagerComponent();
+				baseWeaponComp.GetCurrentSlot();
+				charController.SelectWeapon(null);
+				
+				delete owner;
 				t2 = null;
 			}
 		}
 		
 	}
-	
-	override void EOnInit(IEntity owner)
-	{
-		
-		if (FindComponent(WeaponComponent))
-			weaponComponent = WeaponComponent.Cast(FindComponent(WeaponComponent));
-
-
-		if (FindComponent(AttachmentSlotComponent))
-		{
-			Print("Found attachment slot");
-			thrower = AttachmentSlotComponent.Cast(FindComponent(AttachmentSlotComponent));		//this will manage the throwing part.
-			
-			IEntity attachmentThrower = thrower.GetAttachedEntity();
-			
-			if (attachmentThrower)
-			{
-				if (attachmentThrower.FindComponent(MuzzleInMagComponent))
-				{
-					muzzleInMagComponent = MuzzleInMagComponent.Cast(attachmentThrower.FindComponent(MuzzleInMagComponent));
-					BaseMagazineComponent t = muzzleInMagComponent.GetMagazine();
-				}
-
-				
-			}
-			
-		
-		
-		
-		}
-			
-	
-	}
-	
-
-	
-	
-	//		we need to make a copy of this entity as a projectile.
-	
-
 }
 
 

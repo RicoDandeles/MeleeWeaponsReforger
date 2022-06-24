@@ -482,23 +482,85 @@ $grp MW_ManualProjectile : "{4572958B97361D4B}TEST2/knifeProjectile2.et" {
   coords 92.966 1.008 80.978
  }
 }
-MW_MeleeWeaponEntity : "{81D22DE5FB6B4414}TEST2/FirstWorkingThrowingKnife.et" {
- components {
-  SCR_WeaponAttachmentsStorageComponent "{59A88256FBCB70A7}" {
-   Attributes SCR_ItemAttributeCollection "{59A88256F7A9ADA8}" {
-    ItemPhysAttributes ItemPhysicalAttributes "{59A88256E6833EFD}" {
-     Weight 2
-     ItemDimensions 130.8 10 10
-     ItemVolume 63.59999847
-     RestingAdditiveRotationLS 126.3 24.2 0
-     PivotBoneName "attachPoint"
-     RestingAdditiveOffsetLS 18.4 16.2 0
-    }
-    ItemAnimationAttributes ItemAnimationAttributes "{59A88256E74F167F}" {
-     HandAdditiveTranslation 476 0 0
+$grp MW_MeleeWeaponEntity : "{81D22DE5FB6B4414}TEST2/FirstWorkingThrowingKnife.et" {
+ {
+  components {
+   SCR_WeaponAttachmentsStorageComponent "{59A88256FBCB70A7}" {
+    Attributes SCR_ItemAttributeCollection "{59A88256F7A9ADA8}" {
+     ItemPhysAttributes ItemPhysicalAttributes "{59A88256E6833EFD}" {
+      Weight 2
+      ItemDimensions 130.8 10 10
+      ItemVolume 63.59999847
+      RestingAdditiveRotationLS 126.3 24.2 0
+      PivotBoneName "attachPoint"
+      RestingAdditiveOffsetLS 18.4 16.2 0
+     }
+     ItemAnimationAttributes ItemAnimationAttributes "{59A88256E74F167F}" {
+      HandAdditiveTranslation 476 0 0
+     }
     }
    }
   }
+  coords 33.883 1.158 11.92
  }
- coords 33.883 1.158 11.92
+ {
+  components {
+   SCR_WeaponAttachmentsStorageComponent "{59A88256FBCB70A7}" {
+    Attributes SCR_ItemAttributeCollection "{59A88256F7A9ADA8}" {
+     ItemPhysAttributes ItemPhysicalAttributes "{59A88256E6833EFD}" {
+      Weight 2
+      ItemDimensions 130.8 10 10
+      ItemVolume 63.59999847
+      RestingAdditiveRotationLS 126.3 24.2 0
+      PivotBoneName "attachPoint"
+      RestingAdditiveOffsetLS 18.4 16.2 0
+     }
+     ItemAnimationAttributes ItemAnimationAttributes "{59A88256E74F167F}" {
+      HandAdditiveTranslation 476 0 0
+     }
+    }
+   }
+  }
+  coords 35.297 1.001 11.148
+ }
+ {
+  components {
+   SCR_WeaponAttachmentsStorageComponent "{59A88256FBCB70A7}" {
+    Attributes SCR_ItemAttributeCollection "{59A88256F7A9ADA8}" {
+     ItemPhysAttributes ItemPhysicalAttributes "{59A88256E6833EFD}" {
+      Weight 2
+      ItemDimensions 130.8 10 10
+      ItemVolume 63.59999847
+      RestingAdditiveRotationLS 126.3 24.2 0
+      PivotBoneName "attachPoint"
+      RestingAdditiveOffsetLS 18.4 16.2 0
+     }
+     ItemAnimationAttributes ItemAnimationAttributes "{59A88256E74F167F}" {
+      HandAdditiveTranslation 476 0 0
+     }
+    }
+   }
+  }
+  coords 33.601 1.001 11.701
+ }
+ {
+  components {
+   SCR_WeaponAttachmentsStorageComponent "{59A88256FBCB70A7}" {
+    Attributes SCR_ItemAttributeCollection "{59A88256F7A9ADA8}" {
+     ItemPhysAttributes ItemPhysicalAttributes "{59A88256E6833EFD}" {
+      Weight 2
+      ItemDimensions 130.8 10 10
+      ItemVolume 63.59999847
+      RestingAdditiveRotationLS 126.3 24.2 0
+      PivotBoneName "attachPoint"
+      RestingAdditiveOffsetLS 18.4 16.2 0
+     }
+     ItemAnimationAttributes ItemAnimationAttributes "{59A88256E74F167F}" {
+      HandAdditiveTranslation 476 0 0
+     }
+    }
+   }
+  }
+  coords 32.142 1.001 10.159
+ }
 }
