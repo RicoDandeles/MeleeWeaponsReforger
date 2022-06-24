@@ -85,11 +85,7 @@ MW_MeleeWeaponEntity {
      }
     }
     MuzzleComponent "{59A87E77107D80F6}" {
-     FireModes {
-      BaseFireMode "{59A87E7713791692}" {
-       UIName "Normal"
-      }
-     }
+     MuzzleType UGLMuzzle
      SupportsLowered 1
     }
     BaseItemAnimationComponent "{59A6A03F0B40A55B}" {

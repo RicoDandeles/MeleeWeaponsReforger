@@ -7,7 +7,8 @@ class MW_ManualProjectile : Projectile
 	
 	ShellMoveComponent shell;		//to modify stuff in real time
 	Physics addedPhysics;
-	
+	const ResourceName replaceEntityResourceName = "{81D22DE5FB6B4414}TEST2/FirstWorkingThrowingKnife.et";
+
 	override void EOnInit(IEntity owner)
 	{
 		//Print("Projectile Mele");
@@ -36,23 +37,35 @@ class MW_ManualProjectile : Projectile
 		SCR_PlayerController m_playerController = SCR_PlayerController.Cast(GetGame().GetPlayerController());
 		IEntity currentPlayer = m_playerController.GetMainEntity();
 		
+		Resource replaceEntityResource = Resource.Load(replaceEntityResourceName);
+
+		
+		
+		if (!tempFixAlreadySpawned && other.Type() == GenericTerrainEntity)
+		{
+			Print("Terrain");
+			
+			
+			
+			IEntity newWeapon = GetGame().SpawnEntityPrefab(replaceEntityResource, GetGame().GetWorld());
+			
+			vector currentTransform[4];
+			GetTransform(currentTransform);
+			
+			
+			newWeapon.SetTransform(currentTransform);
+			
+			delete owner;
+			
+		}
+		
+		
+		
 		if (!tempFixAlreadySpawned && other.FindComponent(CharacterControllerComponent) && currentPlayer != other)
 		{
 			CharacterControllerComponent cntrlComp = CharacterControllerComponent.Cast(other.FindComponent(CharacterControllerComponent));
 			//cntrlComp.ForceDeath();
-			
-			
 
-
-			//we'd need a way to check for nodeid from position... todo i guess 
-			
-
-			
-			
-			//vector mat[4];
-			//spawnedKnife.GetWorldTransform(mat);
-			
-			
 			
 			ChimeraCharacter chimeraOther = ChimeraCharacter.Cast(other);
 			SCR_DamageManagerComponent damageManagerComponent = chimeraOther.GetDamageManager();
@@ -64,19 +77,32 @@ class MW_ManualProjectile : Projectile
 			damageManagerComponent.GetPhysicalHitZones(hitZones);
 			
 			
-			int currentBoneIndex;
-			int currentBoneId;
+
 			vector hitzoneTransform[4];
 			
 			int index = 0;		//??
 			float bestDifference = -1;
-			int correctBoneId;
+			
+			
+			
+			
+			int currentNodeID;
+			int currentBoneIndex;
+
+			int correctNodeID;
+			int correctBoneIndex;
+			
+			
+			
+			
+			
+			ScriptedHitZone bestHitzone;
 
 			//Print(contact.Position);
 			foreach(HitZone hitzone : hitZones)
 			{
 			
-				hitzone.TryGetColliderDescription(other, index, hitzoneTransform, currentBoneIndex, currentBoneId);
+				hitzone.TryGetColliderDescription(other, index, hitzoneTransform, currentBoneIndex, currentNodeID);
 				
 				vector worldTransform = other.CoordToParent(hitzoneTransform[1]);
 				
@@ -90,13 +116,20 @@ class MW_ManualProjectile : Projectile
 					
 					
 					if (bestDifference == -1)
+					{
 						bestDifference = currentDifference;
+
+					
+					}
 				
 					
 					if (bestDifference > currentDifference)
 					{
 						bestDifference = currentDifference;
-						correctBoneId = currentBoneId;
+						correctNodeID = currentNodeID;		//node id
+						correctBoneIndex = currentBoneIndex;
+						bestHitzone = ScriptedHitZone.Cast(hitzone);
+
 
 					
 					}
@@ -105,28 +138,27 @@ class MW_ManualProjectile : Projectile
 					//bestDifference = Math.AbsFloat(contact.Position[0] - worldTransform[0];
 					
 					
-					//Print(currentBoneId);
+					//Print(currentNodeID);
 				}
 				
 				
 				
 				//Print(hitzoneTransform[0]);
 			}
-			//Print(correctBoneId);
+			//Print(correctNodeID);
 			//Print("_____________");
 						
 			//deletes the knife and apply a mesh on the char 
 			
-			if (correctBoneId != 0)
+			if (correctNodeID != 0)
 			{
-				ResourceName tmpRes = "{4572958B97361D4B}TEST2/knifeProjectile2.et";
-				Resource res = Resource.Load(tmpRes);
-				IEntity spawnedKnife = GetGame().SpawnEntityPrefab(res);
+
+				IEntity spawnedKnife = GetGame().SpawnEntityPrefab(replaceEntityResource);
 				//Print(spawnedKnife.GetOrigin());
 				
-				
-				
-				
+				float damage = Math.RandomFloat(30, 60);
+				damageManagerComponent.HandleDamage(EDamageType.KINETIC, damage, contact.Normal, owner, bestHitzone, spawnedKnife, contact.Material1 , correctBoneIndex, correctNodeID);
+			
 				
 				vector correctedCoord = other.CoordToLocal(contact.Position);
 				
@@ -162,6 +194,7 @@ class MW_ManualProjectile : Projectile
 				
 				owner.GetPhysics().SetActive(0);
 				owner.SetOrigin("0 0 0");
+				//todo delete it.
 				
 				//array<string> colliderNames;
 				//other.GetAllColliderNames(colliderNames);

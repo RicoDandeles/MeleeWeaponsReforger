@@ -21,7 +21,7 @@ class MW_MeleeWeaponEntity : GenericEntity
 	
 	
 	
-	MW_ManualProjectile t2;
+	MW_ManualProjectile meleeProjectile;			//wtf is htis
 	
 	override void EOnInit(IEntity owner)
 	{
@@ -29,27 +29,17 @@ class MW_MeleeWeaponEntity : GenericEntity
 		if (FindComponent(WeaponComponent))
 			weaponComponent = WeaponComponent.Cast(FindComponent(WeaponComponent));
 
-
 		if (FindComponent(AttachmentSlotComponent))
 		{
-			//Print("Found attachment slot");
 			thrower = AttachmentSlotComponent.Cast(FindComponent(AttachmentSlotComponent));		//this will manage the throwing part.
-			
 			IEntity attachmentThrower = thrower.GetAttachedEntity();
 			
-			if (attachmentThrower)
-			{
-				if (attachmentThrower.FindComponent(MuzzleInMagComponent))
-				{
-					muzzleInMagComponent = MuzzleInMagComponent.Cast(attachmentThrower.FindComponent(MuzzleInMagComponent));
-					BaseMagazineComponent t = muzzleInMagComponent.GetMagazine();
-				}
 
-				
+			if (attachmentThrower.FindComponent(MuzzleInMagComponent))
+			{
+				muzzleInMagComponent = MuzzleInMagComponent.Cast(attachmentThrower.FindComponent(MuzzleInMagComponent));
+				BaseMagazineComponent t = muzzleInMagComponent.GetMagazine();
 			}
-			
-		
-		
 		
 		}
 			
@@ -59,52 +49,56 @@ class MW_MeleeWeaponEntity : GenericEntity
 	
 	override void EOnFrame(IEntity owner, float timeSlice)
 	{
-	
-
-		if (muzzleInMagComponent)
+		
+		// triggers only when the weapon is in someone's hands
+		if (owner.GetParent())
 		{
-			BaseMagazineComponent t = muzzleInMagComponent.GetMagazine();		//WE NEED LOGIC TO SET PROJECTILES!!!
+			ChimeraCharacter character = ChimeraCharacter.Cast(owner.GetParent());		//should be the parent?
+			CharacterControllerComponent charController = character.GetCharacterController();
 			
 			
-			if (!t2 && t)
+			if (muzzleInMagComponent)
 			{
+				// Force  it to UGL thrower... we need a better way to do this
+				BaseMagazineComponent magazineComponent = muzzleInMagComponent.GetMagazine();		//WE NEED LOGIC TO SET PROJECTILES!!!
+				charController.SetMuzzle(1);
+				
+				
+				if (magazineComponent && !meleeProjectile)
+					meleeProjectile = MW_ManualProjectile.Cast(magazineComponent.GetOwner());
+				else if (!magazineComponent && meleeProjectile)
+				{
+					//Setup physics 
+					meleeProjectile.addedPhysics = Physics.CreateDynamic(meleeProjectile, 1,  -1);			
+					meleeProjectile.addedPhysics.SetInteractionLayer(EPhysicsLayerPresets.Main);
+					meleeProjectile.addedPhysics.SetActive(1);
+					meleeProjectile.addedPhysics.EnableGravity(true);
+					
+					//Launch it 
+					
+					vector charDirection = owner.GetYawPitchRoll();
+					Print(charDirection);
+					vector impulse = owner.GetTransformAxis(2);// * charDirection;
+					impulse[0] = impulse[0] * 10;
+					impulse[1] = impulse[1] * 10;
+					impulse[2] = impulse[2] * 10;
+					meleeProjectile.addedPhysics.ApplyImpulse(impulse);
+					
+					
+					//Removes the entity from the player storage
+					InventoryStorageManagerComponent inventoryComp = charController.GetInventoryStorageManager();
+					BaseWeaponManagerComponent baseWeaponComp = charController.GetWeaponManagerComponent();
+					baseWeaponComp.GetCurrentSlot();
+					charController.SelectWeapon(null);
+							
+					delete owner;
+					meleeProjectile = null;
+					
+				}	
+
 			
-				t2 = MW_ManualProjectile.Cast(t.GetOwner());
-			}
-			else if (t2 && !t)	
-			{
-				Print("Applying physics!");
-				t2.addedPhysics = Physics.CreateDynamic(t2, 1,  -1);		
-				
-				t2.addedPhysics.SetInteractionLayer(EPhysicsLayerPresets.Main);
-				t2.addedPhysics.SetActive(1);
-				t2.addedPhysics.EnableGravity(true);
-				
-				
-				vector impulse = owner.GetTransformAxis(2);
-				
-				impulse[0] = impulse[0] * 10;
-				impulse[1] = 1;
-				impulse[2] = impulse[2] * 10;
-				Print(impulse);
-				t2.addedPhysics.ApplyImpulse(impulse);
-				
 
 				
-				// Spawn prefab. We need to rmeove immediately the knife from the player inv 
-				
-				
-				// todo should swap automatically to another weapon
-				//reset animations and delete knife from player's hand
-				ChimeraCharacter character = ChimeraCharacter.Cast(owner.GetParent());		//should be the parent?
-				CharacterControllerComponent charController = character.GetCharacterController();
-				InventoryStorageManagerComponent inventoryComp = charController.GetInventoryStorageManager();
-				BaseWeaponManagerComponent baseWeaponComp = charController.GetWeaponManagerComponent();
-				baseWeaponComp.GetCurrentSlot();
-				charController.SelectWeapon(null);
-				
-				delete owner;
-				t2 = null;
 			}
 		}
 		

@@ -1,0 +1,14 @@
+$grp SCR_ChimeraCharacter : "{2619482C6C4202E0}Prefabs/Characters/Campaign/Final/Campaign_US_AI.et" {
+ {
+  coords 30.109 1.001 23.792
+ }
+ {
+  coords 31.726 1.001 28.023
+ }
+ {
+  coords 33.543 1.001 25.584
+ }
+ {
+  coords 33.504 1.001 22.986
+ }
+}
