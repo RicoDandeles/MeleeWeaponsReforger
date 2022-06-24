@@ -89,6 +89,7 @@ class MW_MeleeWeaponEntity : GenericEntity
 				Print(impulse);
 				t2.addedPhysics.ApplyImpulse(impulse);
 				
+
 				
 				// Spawn prefab. We need to rmeove immediately the knife from the player inv 
 				

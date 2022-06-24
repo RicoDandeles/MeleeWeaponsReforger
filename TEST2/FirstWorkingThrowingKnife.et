@@ -22,8 +22,12 @@ MW_MeleeWeaponEntity {
      Description "test"
     }
     ItemPhysAttributes ItemPhysicalAttributes "{59A88256E6833EFD}" {
-     RestingAdditiveRotationLS 90 0 0
-     PivotBoneName "Scene_Root"
+     Weight 2
+     ItemDimensions 130.8 10 10
+     ItemVolume 63.59999847
+     RestingAdditiveRotationLS 126.3 24.2 0
+     PivotBoneName "attachPoint"
+     RestingAdditiveOffsetLS 18.4 16.2 0
     }
     ItemAnimationAttributes ItemAnimationAttributes "{59A88256E74F167F}" {
      IkSettings {
@@ -45,6 +49,12 @@ MW_MeleeWeaponEntity {
      }
      AnimationInstance "{21158E82688907CC}anims/workspaces/player/player_main_rifle_m16a2.asi"
      AnimationIKPose "{9CA239925FE3C73A}Assets/Weapons/Rifles/M16A2/anims/anmM203/p_m16_M203_ik.anm"
+     HandAdditiveTranslation 476 0 0
+    }
+    CustomAttributes {
+     PreviewRenderAttributes "{59B09DE49BB22D1A}" {
+      CameraPreset Right
+     }
     }
     m_SlotType SLOT_WEAPONS_STORAGE
    }
@@ -67,7 +77,9 @@ MW_MeleeWeaponEntity {
     AttachmentSlotComponent "{59A6EBC3B92D05C9}" {
      AttachmentSlot InventoryStorageSlot Thrower {
       PivotID "Scene_Root"
-      Prefab "{B47E54C648DDF6A9}TEST2/thrower5.et"
+      Offset 0 0.065 -0.075
+      Angles 0 0 0
+      Prefab "{7BFE59D83CBFBB47}TEST2/thrower_7.et"
      }
      AttachmentType AttachmentUnderBarrelM203 "{59A87E776CD53FEA}" {
      }
@@ -164,6 +176,6 @@ MW_MeleeWeaponEntity {
   RplComponent "{59A6A03A1786F1A4}" {
   }
  }
- coords 0 0 0
+ coords 28.542 1.119 11.701
  Flags 4194307
 }

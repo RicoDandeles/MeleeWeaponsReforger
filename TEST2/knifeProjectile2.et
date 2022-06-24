@@ -34,6 +34,7 @@ MW_ManualProjectile {
    }
   }
   MagazineComponent "{59A88EE664D95730}" {
+   Enabled 1
    MagazineWell MagazineWellUS_UGL "{59A88EE664D95773}" {
    }
    UIInfo MagazineUIInfo "{59A88EE664D95731}" {
@@ -49,9 +50,11 @@ MW_ManualProjectile {
    MaxAmmo 1
   }
   MeshObject "{59A88EE664D956ED}" {
+   Enabled 1
    Object "{CB4B410E5D99D4CF}Assets/Weapons/Attachments/Bayonets/Bayonet_M9/Bayonet_M9.xob"
   }
   Hierarchy "{59A88EE664D956E8}" {
+   Enabled 1
   }
   RigidBody "{59A88EE664D956FB}" {
    Enabled 0
@@ -103,12 +106,15 @@ MW_ManualProjectile {
    }
   }
   RplComponent "{59A88EE664D95660}" {
+   Enabled 1
+   "Self Insert" 1
   }
  }
- coords 97.042 1.001 77.894
+ coords 34.269 1.001 12.558
+ Flags 3
  SpawnAsCartridge 1
  ProjectileVisibleTimeScale 2
- ProjectileModel "{CB4B410E5D99D4CF}Assets/Weapons/Attachments/Bayonets/Bayonet_M9/Bayonet_M9.xob"
- CartridgeModel "{CB4B410E5D99D4CF}Assets/Weapons/Attachments/Bayonets/Bayonet_M9/Bayonet_M9.xob"
+ ProjectileModel "{F2E1926C50C222E1}Assets/Weapons/Attachments/Bayonets/Bayonet_6Kh4/Bayonet_6Kh4.xob"
+ CartridgeModel "{F2E1926C50C222E1}Assets/Weapons/Attachments/Bayonets/Bayonet_6Kh4/Bayonet_6Kh4.xob"
  CartridgeLayerPreset "ItemFireView"
 }
